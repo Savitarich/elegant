@@ -38,5 +38,45 @@ jQuery(document).ready(function ($) {
       autoplay: true, // Автопрокрутка
       autoplaySpeed: 3000 // Задержка между слайдами
     });
-  });
+});
+
+
+//HOME PRODUCTS-CAROUSEL
+document.querySelectorAll('.swiper-container').forEach((swiperContainer, index) => {
+    swiperContainer.classList.add(`swiper-slider-${index}`);
+    
+    const dragSize = swiperContainer.dataset.dragSize || 50;
+const freeMode = swiperContainer.dataset.freeMode === 'true';
+const loop = swiperContainer.dataset.loop === 'true';
+const slidesDesktop = swiperContainer.dataset.slidesDesktop || 4;
+const slidesTablet = swiperContainer.dataset.slidesTablet || 3;
+const slidesMobile = swiperContainer.dataset.slidesMobile || 2;
+const slidesMobileSmall = swiperContainer.dataset.slidesMobileSmall || 1; // Исправление: добавлен новый параметр для маленьких мобильных устройств
+const spaceBetween = swiperContainer.dataset.spaceBetween || 20;
   
+    new Swiper(`.swiper-slider-${index}`, {
+      direction: 'horizontal',
+      loop,
+      freeMode,
+      spaceBetween,
+      breakpoints: {
+        992: {
+          slidesPerView: parseInt(slidesDesktop, 10), // Десктоп: 4 слайда
+        },
+        621: {
+          slidesPerView: parseInt(slidesTablet, 10), // Планшет: 3 слайда
+        },
+        480: {
+          slidesPerView: parseInt(slidesMobile, 10), // Для экранов до 620px: 2 слайда
+        },
+        320: {
+          slidesPerView: parseInt(slidesMobileSmall, 10), // Для экранов до 480px: 1 слайд
+        },
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        dragSize: parseInt(dragSize, 10),
+      },
+    });
+  });
