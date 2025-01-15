@@ -164,17 +164,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeBtn.addEventListener("click", function () {
     miniCart.classList.add("hidden");
+    body.classList.remove("lock");
   });
 
   miniCart.addEventListener("click", function (e) {
     if (e.target === miniCart) {
       miniCart.classList.add("hidden");
+      body.classList.remove("lock");
     }
   });
 
   openCartBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       miniCart.classList.remove("hidden");
+      body.classList.add("lock");
     });
   });
 });
