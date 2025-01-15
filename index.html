@@ -58,7 +58,7 @@
                         <div class="header__mobile-bottom header__mobile-hide">
                             <ul class="header__mobile-tools">
                                 <li>
-                                    <a class="header__wishlist" href="#">
+                                    <a class="header__cart" href="#">
                                         <p>Cart</p>
                                         <div>
                                             <img src="assets/images/header/cart-icon.svg" alt="cart">
@@ -67,7 +67,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="header__cart" href="#">
+                                    <a class="header__wishlist" href="#">
                                         <p>Wishlist</p>
                                         <div>
                                             <img src="assets/images/header/wishlist-icon.svg" alt="wishlist">
@@ -543,6 +543,87 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="mini-cart hidden">
+        <div class="mini-cart__row">
+            <div class="mini-cart__top">
+                <div class="mini-cart__title-row">
+                    <h4 class="mini-cart__title">Cart</h4>
+                    <button class="mini-cart__close"><img src="assets/images/header/close-icon.svg" alt="close"></button>
+                </div>
+                
+                <div class="mini-cart__products">
+                    <div class="mini-cart__product">
+                        <div class="mini-cart__product-left">
+                            <img src="assets/images/mini-cart/01.jpg" alt="Product">
+                            <div class="mini-cart__product-left-info">
+                                <h6>Tray Table</h6>
+                                <p>Color: Black</p>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus"><img src="assets/images/mini-cart/minus.svg" alt="minus"></button>
+                                    <input type="text" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus"><img src="assets/images/mini-cart/plus.svg" alt="minus"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-cart__product-right">
+                            <p class="mini-cart__product-price">$19.19</p>
+                            <button class="mini-cart__product-delete"><img src="assets/images/header/close-icon.svg" alt="close"></button>
+                        </div>
+                    </div>
+                    <div class="mini-cart__product">
+                        <div class="mini-cart__product-left">
+                            <img src="assets/images/mini-cart/02.jpg" alt="Product">
+                            <div class="mini-cart__product-left-info">
+                                <h6>Tray Table</h6>
+                                <p>Color: Red</p>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus"><img src="assets/images/mini-cart/minus.svg" alt="minus"></button>
+                                    <input type="text" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus"><img src="assets/images/mini-cart/plus.svg" alt="minus"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-cart__product-right">
+                            <p class="mini-cart__product-price">$19.19</p>
+                            <button class="mini-cart__product-delete"><img src="assets/images/header/close-icon.svg" alt="close"></button>
+                        </div>
+                    </div>
+                    <div class="mini-cart__product">
+                        <div class="mini-cart__product-left">
+                            <img src="assets/images/mini-cart/03.jpg" alt="Product">
+                            <div class="mini-cart__product-left-info">
+                                <h6>Table lamp</h6>
+                                <p>Color: gold</p>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus"><img src="assets/images/mini-cart/minus.svg" alt="minus"></button>
+                                    <input type="text" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus"><img src="assets/images/mini-cart/plus.svg" alt="minus"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-cart__product-right">
+                            <p class="mini-cart__product-price">$39.00</p>
+                            <button class="mini-cart__product-delete"><img src="assets/images/header/close-icon.svg" alt="close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-cart__bottom">
+                <p class="mini-cart__subtotal">
+                    Subtotal
+                    <span>$99.00</span>
+                </p>
+                <p class="mini-cart__total">
+                    Total
+                    <span>$234.00</span>
+                </p>
+                <button class="button">Checkout</button>
+                <a class="mini-cart__view-cart" href="cart.html">View Cart</a>
+            </div>
+
         </div>
     </div>
 

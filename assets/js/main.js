@@ -135,3 +135,47 @@ buttonsToggleSignInUp.forEach(button => {
     signUpRow.classList.toggle('hidden');
   });
 });
+
+// MINI CART
+document.addEventListener("DOMContentLoaded", function () {
+  const minusBtns = document.querySelectorAll(".qty-btn.minus");
+  const plusBtns = document.querySelectorAll(".qty-btn.plus");
+  const miniCart = document.querySelector(".mini-cart");
+  const closeBtn = document.querySelector(".mini-cart__close");
+  const openCartBtns = document.querySelectorAll(".header__cart");
+
+  minusBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const input = this.nextElementSibling;
+      const currentValue = parseInt(input.value, 10);
+      if (currentValue > parseInt(input.min, 10)) {
+        input.value = currentValue - 1;
+      }
+    });
+  });
+
+  plusBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const input = this.previousElementSibling;
+      const currentValue = parseInt(input.value, 10);
+      input.value = currentValue + 1;
+    });
+  });
+
+  closeBtn.addEventListener("click", function () {
+    miniCart.classList.add("hidden");
+  });
+
+  miniCart.addEventListener("click", function (e) {
+    if (e.target === miniCart) {
+      miniCart.classList.add("hidden");
+    }
+  });
+
+  openCartBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      miniCart.classList.remove("hidden");
+    });
+  });
+});
+
