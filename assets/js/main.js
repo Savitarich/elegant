@@ -101,3 +101,37 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// SIGN IN/SIGN UP POPUP
+document.addEventListener("DOMContentLoaded", () => {
+    const signPopup = document.querySelector(".sign-popup");
+    const privateBtn = document.querySelector(".header__private");
+    const signInBtn = document.querySelector(".header__sign-in-btn");
+    const signPopupBtnClose = document.querySelector(".sign-popup__close");
+    
+    const openPopup = () => {
+      signPopup.classList.remove("hidden");
+      body.classList.add("lock");
+    } 
+    privateBtn.addEventListener("click", openPopup);
+    signInBtn.addEventListener("click", openPopup);
+
+
+    const closePopup = () => {
+      signPopup.classList.add("hidden");
+      body.classList.remove("lock");
+    } 
+    signPopupBtnClose.addEventListener("click", closePopup);
+});
+
+
+const buttonsToggleSignInUp = document.querySelectorAll('.sign-popup__btn-togle');
+const signInRow = document.getElementById('sign-in-row');
+const signUpRow = document.getElementById('sign-up-row');
+
+buttonsToggleSignInUp.forEach(button => {
+  button.addEventListener('click', () => {
+    signInRow.classList.toggle('hidden');
+    signUpRow.classList.toggle('hidden');
+  });
+});
